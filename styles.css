@@ -1,87 +1,54 @@
-/* 通用样式 */
-body {
-    font-family: Arial, sans-serif; /* 设置页面的字体为Arial，如果没有Arial则使用sans-serif */
-    margin: 0; /* 将body元素的外边距设为0 */
-    padding: 0; /* 将body元素的内边距设为0 */
-    line-height: 1.6; /* 设置文本的行高为1.6倍字体大小 */
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/MyFont.ttf') format('truetype');
 }
 
-/* 页眉样式 */
-header {
-    background: url('img/charactor1.png') no-repeat center center; /* 设置页眉背景图片，居中对齐且不重复 */
-    background-size: cover; /* 使背景图片覆盖整个页眉区域 */
-    color: #fff; /* 设置页眉文字颜色为白色 */
-    padding: 100px 0; /* 设置页眉的上下内边距为20px，左右内边距为0 */
-    text-align: center; /* 设置页眉中的内容居中对齐 */
+body, html {
+    height: 100%;
+    margin: 0;
 }
 
-/* 导航栏样式 */
-nav {
-    background: #444; /* 设置导航栏背景颜色为稍浅的深灰色 */
-    padding: 10px; /* 设置导航栏内边距为10px */
-    text-align: center; /* 设置导航栏中的内容居中对齐 */
+.background {
+    /* 背景图片 */
+    background-image: url('img/charactor3.jpg');
+    /* 背景图片的大小覆盖整个屏幕 */
+    background-size: cover;
+    /* 背景图片固定，不随内容滚动 */
+    background-attachment: fixed;
+    /* 背景图片的位置 */
+    background-position: center;
+    /* 背景图片重复 */
+    background-repeat: no-repeat;
+    /* 全屏幕高度 */
+    height: 100%;
+    /* 让文字居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 设置字体颜色和大小 */
+    color: rgb(255, 255, 255);
+    text-align: center;
+    flex-direction: column;
 }
 
-nav a {
-    color: #fff; /* 设置导航链接文字颜色为白色 */
-    margin: 0 15px; /* 设置导航链接的左右外边距为15px */
-    text-decoration: none; /* 去掉导航链接的下划线 */
-    font-size: 2em; /* 设置导航链接的字体大小为2倍标准大小 */
+.text {
+    margin: 0;
+    font-size: 3em; /* 主页面两行字放大 */
+    font-family: 'MyFont', sans-serif; /* 使用自定义字体 */
 }
 
-nav a:hover {
-    text-decoration: underline; /* 当鼠标悬停时，显示下划线 */
+.links {
+    margin-top: 5px;
+    font-size: 1em; /* 子页面名称文字变小 */
+    font-family: 'MyFont', sans-serif; /* 使用自定义字体 */
 }
 
-/* 主要内容样式 */
-main {
-    padding: 20px; /* 设置主要内容区的内边距为20px */
-    text-align: center; /* 设置主要内容区中的内容居中对齐 */
+.links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
 }
 
-main h2 {
-    font-size: 3em; /* 设置主要内容区标题的字体大小为3倍标准大小 */
-    margin-top: 20px; /* 设置主要内容区标题的顶部外边距为20px */
-}
-
-main p {
-    font-size: 2em; /* 设置主要内容区段落的字体大小为2倍标准大小 */
-}
-
-/* 列表样式 */
-main ul {
-    list-style: none; /* 去掉列表项的默认项目符号 */
-    padding: 0; /* 将列表的内边距设为0 */
-}
-
-main ul li {
-    font-size: 2em; /* 设置列表项的字体大小为2倍标准大小 */
-    margin: 10px 0; /* 设置列表项的上下外边距为10px */
-}
-
-/* 图片样式 */
-main img {
-    max-width: 100%; /* 设置图片的最大宽度为容器宽度的100% */
-    height: auto; /* 设置图片的高度根据宽度自动调整 */
-}
-
-/* 视频样式 */
-main video {
-    width: 100%; /* 设置视频的宽度为容器宽度的100% */
-}
-
-/* 音频样式 */
-main audio {
-    width: 100%; /* 设置音频控制器的宽度为容器宽度的100% */
-}
-
-/* 页脚样式 */
-footer {
-    background: #d390f7; /* 设置页脚背景颜色为深灰色 */
-    color: #fbc216; /* 设置页脚文字颜色为白色 */
-    text-align: center; /* 设置页脚中的内容居中对齐 */
-    padding: 10px 0; /* 设置页脚的上下内边距为10px，左右内边距为0 */
-    position: fixed; /* 固定页脚在页面底部 */
-    bottom: 0; /* 设置页脚位置为距离页面底部0px */
-    width: 100%; /* 设置页脚宽度为页面宽度的100% */
+.links a:hover {
+    text-decoration: underline;
 }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            /* 背景图片 */
+            background-image: url('img/charactor3.jpg');
+            /* 背景图片的大小覆盖整个屏幕 */
+            background-size: cover;
+            /* 背景图片固定，不随内容滚动 */
+            background-attachment: fixed;
+            /* 背景图片的位置 */
+            background-position: center;
+            /* 背景图片重复 */
+            background-repeat: no-repeat;
+            /* 设置字体颜色和大小 */
+            color: white;
+            /* 设置字体样式 */
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明背景色 */
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 30%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px; /* 圆角矩形 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 添加投影效果 */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="image.html">Image</a>
+        <a href="video.html">Video</a>
+        <a href="music.html">Music</a>
+    </nav>
+    <main>
+        <img src="Portfolio/1.jpg" alt="Featured Image">
+        <img src="Portfolio/1.png" alt="Featured Image">
+        <img src="Portfolio/2.jpg" alt="Featured Image">
+        <img src="Portfolio/3.jpg" alt="Featured Image">
+        <img src="Portfolio/3.png" alt="Featured Image">
+        <img src="Portfolio/5.png" alt="Featured Image">
+        <img src="Portfolio/TWO.jpg" alt="Featured Image">
+        <img src="Portfolio/THREE.jpg" alt="Featured Image">
+        <img src="Portfolio/FOUR.jpg" alt="Featured Image">
+        <img src="Portfolio/FIVE.jpg" alt="Featured Image">
+        <img src="Portfolio/ONE.jpg" alt="Featured Image">
+    </main>
+</body>
+</html>

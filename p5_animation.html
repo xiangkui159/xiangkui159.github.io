@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js Artistic Animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #p5-container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="p5-container"></div>
+
+    <script>
+        let particles = [];
+
+        function setup() {
+            let canvas = createCanvas(windowWidth, windowHeight);
+            canvas.parent('p5-container'); // 将画布放入指定的 div 容器中
+            background(0);
+        }
+
+        function draw() {
+            background(0, 25); // Creates a trailing effect
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update();
+                particles[i].show();
+                if (particles[i].finished()) {
+                    particles.splice(i, 1);
+                }
+            }
+            if (mouseIsPressed) {
+                let angle = random(TWO_PI);
+                let radius = random(10, 50);
+                let x = mouseX + radius * cos(angle);
+                let y = mouseY + radius * sin(angle);
+                let p = new Particle(x, y, angle);
+                particles.push(p);
+            }
+        }
+
+        class Particle {
+            constructor(x, y, angle) {
+                this.x = x;
+                this.y = y;
+                this.angle = angle;
+                this.radius = random(10, 50);
+                this.vx = cos(this.angle) * random(1, 3);
+                this.vy = sin(this.angle) * random(1, 3);
+                this.alpha = 255;
+                this.color = color(random(255), random(255), random(255), this.alpha);
+            }
+
+            finished() {
+                return this.alpha < 0;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.alpha -= 5;
+                this.color.setAlpha(this.alpha);
+            }
+
+            show() {
+                noStroke();
+                fill(this.color);
+                let size = map(this.alpha, 0, 255, 0, 16);
+                ellipse(this.x, this.y, size);
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+    </script>
+</body>
+</html>

@@ -5,11 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Page</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            /* 背景图片 */
+            background-image: url('img/charactor3.jpg');
+            /* 背景图片的大小覆盖整个屏幕 */
+            background-size: cover;
+            /* 背景图片固定，不随内容滚动 */
+            background-attachment: fixed;
+            /* 背景图片的位置 */
+            background-position: center;
+            /* 背景图片重复 */
+            background-repeat: no-repeat;
+            /* 设置字体颜色和大小 */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 让整个页面居中显示 */
+            margin: 0;
+            overflow: hidden; /* 隐藏全局滚动条 */
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明背景色 */
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        main {
+            text-align: center;
+            overflow-y: auto; /* 允许垂直滚动 */
+            max-height: calc(100vh - 60px); /* 调整为视口高度减去导航栏高度 */
+            padding: 20px; /* 加入内边距 */
+        }
+
+        /* 隐藏滚动条 */
+        main::-webkit-scrollbar {
+            display: none;
+        }
+
+        audio {
+            margin: auto; /* 居中 */
+            display: block; /* 块级元素，使得margin:auto生效 */
+        }
+
+        .lyrics {
+            text-align: center; /* 居中对齐 */
+            max-width: 800px; /* 最大宽度 */
+            margin: 0 auto; /* 水平居中 */
+            padding: 20px; /* 内边距 */
+            line-height: 1.6; /* 行高 */
+        }
+
+        .lyrics p {
+            margin: 10px 0; /* 段落间距 */
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <h1>Featured Music</h1>
-    </header>
+   
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -19,15 +86,44 @@
         <a href="video.html">Video</a>
         <a href="music.html">Music</a>
     </nav>
+   
     <main>
+        <h2>June</h2>
         <audio controls>
             <source src="music/June.mp3" type="audio/mpeg">
             <source src="audio/featured-music.ogg" type="audio/ogg">
             Your browser does not support the audio tag.
         </audio>
+        <div class="lyrics">
+            <p>The longest day of the year, the sun is shining bright.</p>
+            <p>Golden rays are dancing, filling up the sky.</p>
+            <p>The world is full of color, every shade in sight.</p>
+            <p>On this summer solstice, we feel the warmth inside.</p>
+            <p>A moment of magic, a season's grace.</p>
+            <p>Light so endless, in this sacred space.</p>
+            <p>We find our rhythm, in the sun's warm face.</p>
+            <p>The days stretch out before us, endless and so free,</p>
+            <p>Nature sings a symphony, in perfect harmony.</p>
+            <p>From dawn until the twilight, we chase our wildest dreams,</p>
+            <p>On this midsummer's eve, nothing's as it seems</p>
+            <p>Summer solstice, the earth's embrace,</p>
+            <p>A moment of magic, a season's grace.</p>
+            <p>Light so endless, in this sacred space,</p>
+            <p>We find our rhythm, in the sun's warm face.</p>
+            <p>Whispers in the breeze, secrets of the trees,</p>
+            <p>Stars will soon awaken, as night begins to tease.</p>
+            <p>But for now, we revel in this luminous delight,</p>
+            <p>Summer's heartbeat, echoing through the night.</p>
+            <p>Summer solstice, the earth's embrace,</p>
+            <p>A moment of magic, a season's grace.</p>
+            <p>Light so endless, in this sacred space,</p>
+            <p>We find our rhythm, in the sun's warm face.</p>
+            <p>As the sun dips low, and the shadows start to play,</p>
+            <p>We hold onto the memories of this bright, enchanted day.</p>
+            <p>In the glow of the solstice, where dreams and daylight blend,</p>
+            <p>We celebrate the summer, in the light that has no end.</p>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2024 My Simple Webpage</p>
-    </footer>
+    
 </body>
 </html>
