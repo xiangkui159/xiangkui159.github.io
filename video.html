@@ -59,6 +59,22 @@
             border-radius: 20px; /* 圆角矩形 */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 添加投影效果 */
         }
+
+        img {
+            max-width: 100%;
+            max-height: 80vh; /* 保证图片在视口内 */
+            display: block; /* 居中 */
+            border-radius: 20px; /* 圆角矩形 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 添加投影效果 */
+            margin: 20px;
+        }
+
+        .media-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
     </style>
 </head>
 <body>
@@ -71,12 +87,15 @@
         <a href="image.html">Image</a>
         <a href="video.html">Video</a>
         <a href="music.html">Music</a>
+        <a href="tetris.html">Tetris</a>
     </nav>
     <main>
-        <video controls>
-            <source src="video/runwaytest.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="media-container">
+            <video controls>
+                <source src="video/runwaytest.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </main>
  
 </body>
